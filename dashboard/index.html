@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pharmacy Operations Dashboard</h1>
+            <p class="updated">Last updated: <span id="update-time">--</span></p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Today's Prescriptions</h3>
+                <div class="stat-value" id="rx-count">--</div>
+                <div class="stat-label">filled today</div>
+            </div>
+            <div class="stat-card">
+                <h3>Refill Reminders</h3>
+                <div class="stat-value" id="reminder-count">--</div>
+                <div class="stat-label">sent today</div>
+            </div>
+            <div class="stat-card">
+                <h3>Chat Messages</h3>
+                <div class="stat-value" id="chat-count">--</div>
+                <div class="stat-label">automated</div>
+            </div>
+            <div class="stat-card">
+                <h3>Calls Handled</h3>
+                <div class="stat-value" id="call-count">--</div>
+                <div class="stat-label">by AI</div>
+            </div>
+        </div>
+
+        <div class="charts-row">
+            <div class="chart-container">
+                <h3>Prescription Volume (7 days)</h3>
+                <canvas id="rx-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Compound Categories</h3>
+                <canvas id="category-chart"></canvas>
+            </div>
+        </div>
+
+        <div class="orders-section">
+            <h3>Open Orders</h3>
+            <table id="orders-table">
+                <thead>
+                    <tr>
+                        <th>RX #</th>
+                        <th>Patient</th>
+                        <th>Medication</th>
+                        <th>Status</th>
+                        <th>Days Open</th>
+                    </tr>
+                </thead>
+                <tbody id="orders-body">
+                    <!-- filled by js -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
